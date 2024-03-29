@@ -1,5 +1,7 @@
 package com.tekdays
 
+import org.hibernate.envers.query.AuditQuery
+import org.hibernate.envers.AuditReaderFactory
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -7,6 +9,7 @@ import grails.transaction.Transactional
 class TekUserController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    def datatablesSourceService
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -39,6 +42,19 @@ class TekUserController {
             flash.message = "Invalid username and password."
             render view:'login'
         }
+    }
+
+    def revisions() {
+        def auditQueryCreator = AuditReaderFactory.get(sessionFactory.currentSession).createQuery()
+
+        def revisionList = []
+        AuditQuery query = auditQueryCreator.forRevisionsOfEntity(TekUser.class, false, true)
+        query.resultList.each {
+            if(it[0].id==params.getLong('id')) {
+                revisionList.add(it)
+            }
+        }
+        [revisionList: revisionList]
     }
 
     def create() {
@@ -122,5 +138,11 @@ class TekUserController {
             }
             '*'{ render status: NOT_FOUND }
         }
+    }
+
+    def dataTablesRenderer(){
+        def propertiesToRender = ["fullName", "email", "website", "bio", "password"]
+        def entityName = 'TekUser'
+        render  datatablesSourceService.dataTablesSource(propertiesToRender, entityName, params)
     }
 }
