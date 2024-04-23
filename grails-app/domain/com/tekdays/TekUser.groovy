@@ -11,6 +11,8 @@ class TekUser {
     String email
     String website
     String bio
+    Date dateCreated
+    Date lastUpdated
 
     String toString(){
         fullName
@@ -19,7 +21,7 @@ class TekUser {
     static constraints = {
         fullName()
         userName()
-        email()
+        email email: true, blank: false, unique: true
         website()
         bio maxSize: 5000
     }

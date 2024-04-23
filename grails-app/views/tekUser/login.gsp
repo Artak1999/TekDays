@@ -10,16 +10,17 @@
 <g:if test="${flash.message}">
     <div class="message">${flash.message}</div>
 </g:if>
+
 <g:form action="validate">
     <input type="hidden" name="cName" value="${cName}">
     <input type="hidden" name="aName" value="${aName}">
-    <table>
+    <table style="display: flex; justify-content: center">
         <tr class="prop">
             <td class="name">
                 <label for="username">User Name:</label>
             </td>
             <td class="value">
-                <input type="text" id="username" name="username" value="">
+                <input type="text" id="username" name="username" value="" required>
             </td>
         </tr>
         <tr class="prop">
@@ -27,7 +28,7 @@
                 <label for="password">Password:</label>
             </td>
             <td class="value">
-                <input type="password" id="password" name="password" value="">
+                <input type="password" id="password" name="password" value="" required>
             </td>
         </tr>
         <tr>

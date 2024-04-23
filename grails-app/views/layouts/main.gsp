@@ -21,7 +21,7 @@
 			<a href="${createLink(uri: '/')}">
 				<img src="${resource(dir: 'images', file: 'tek_days.jpg')}" alt="TekDays" width="100%">
 			</a>
-			<g:loginToggle />
+			<g:loginAndRegisterToggle/>
 		</div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo"></div>

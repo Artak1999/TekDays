@@ -5,10 +5,6 @@ import grails.transaction.Transactional
 @Transactional
 class TaskService {
 
-    def serviceMethod() {
-
-    }
-
     def addDefaultTasks(tekEvent){
         if (tekEvent.tasks?.size() > 0)
             return

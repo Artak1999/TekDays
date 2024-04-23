@@ -49,7 +49,7 @@ expressionOut.print(createLink(uri: '/'))
 printHtmlPart(8)
 expressionOut.print(resource(dir: 'images', file: 'tek_days.jpg'))
 printHtmlPart(9)
-invokeTag('loginToggle','g',24,[:],-1)
+invokeTag('loginAndRegisterToggle','g',24,[:],-1)
 printHtmlPart(10)
 invokeTag('layoutBody','g',26,[:],-1)
 printHtmlPart(11)
@@ -64,7 +64,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1711109152488L
+public static final long LAST_MODIFIED = 1713517279732L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

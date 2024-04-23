@@ -48,8 +48,13 @@ createTagBody(2, {->
 invokeTag('message','g',16,['code':("default.new.label"),'args':([entityName])],-1)
 })
 invokeTag('link','g',16,['class':("create"),'action':("create")],2)
+printHtmlPart(8)
+createTagBody(2, {->
+invokeTag('message','g',17,['args':([entityName])],-1)
+})
+invokeTag('link','g',17,['class':("revision"),'action':("revision")],2)
 printHtmlPart(9)
-invokeTag('message','g',20,['code':("default.show.label"),'args':([entityName])],-1)
+invokeTag('message','g',22,['code':("default.show.label"),'args':([entityName])],-1)
 printHtmlPart(10)
 if(true && (flash.message)) {
 printHtmlPart(11)
@@ -59,74 +64,76 @@ printHtmlPart(12)
 printHtmlPart(13)
 if(true && (tekUserInstance?.fullName)) {
 printHtmlPart(14)
-invokeTag('message','g',28,['code':("tekUser.fullName.label"),'default':("Full Name")],-1)
+invokeTag('message','g',32,['code':("tekUser.fullName.label"),'default':("Full Name")],-1)
 printHtmlPart(15)
-invokeTag('fieldValue','g',30,['bean':(tekUserInstance),'field':("fullName")],-1)
+invokeTag('fieldValue','g',36,['bean':(tekUserInstance),'field':("fullName")],-1)
 printHtmlPart(16)
 }
 printHtmlPart(17)
 if(true && (tekUserInstance?.userName)) {
 printHtmlPart(18)
-invokeTag('message','g',37,['code':("tekUser.userName.label"),'default':("User Name")],-1)
+invokeTag('message','g',44,['code':("tekUser.userName.label"),'default':("User Name")],-1)
 printHtmlPart(19)
-invokeTag('fieldValue','g',39,['bean':(tekUserInstance),'field':("userName")],-1)
+invokeTag('fieldValue','g',48,['bean':(tekUserInstance),'field':("userName")],-1)
 printHtmlPart(16)
 }
 printHtmlPart(17)
 if(true && (tekUserInstance?.email)) {
 printHtmlPart(20)
-invokeTag('message','g',46,['code':("tekUser.email.label"),'default':("Email")],-1)
+invokeTag('message','g',56,['code':("tekUser.email.label"),'default':("Email")],-1)
 printHtmlPart(21)
-invokeTag('fieldValue','g',48,['bean':(tekUserInstance),'field':("email")],-1)
+invokeTag('fieldValue','g',60,['bean':(tekUserInstance),'field':("email")],-1)
 printHtmlPart(16)
 }
 printHtmlPart(17)
 if(true && (tekUserInstance?.website)) {
 printHtmlPart(22)
-invokeTag('message','g',55,['code':("tekUser.website.label"),'default':("Website")],-1)
+invokeTag('message','g',68,['code':("tekUser.website.label"),'default':("Website")],-1)
 printHtmlPart(23)
-invokeTag('fieldValue','g',57,['bean':(tekUserInstance),'field':("website")],-1)
+invokeTag('fieldValue','g',72,['bean':(tekUserInstance),'field':("website")],-1)
 printHtmlPart(16)
 }
 printHtmlPart(17)
 if(true && (tekUserInstance?.bio)) {
 printHtmlPart(24)
-invokeTag('message','g',64,['code':("tekUser.bio.label"),'default':("Bio")],-1)
+invokeTag('message','g',80,['code':("tekUser.bio.label"),'default':("Bio")],-1)
 printHtmlPart(25)
-invokeTag('fieldValue','g',66,['bean':(tekUserInstance),'field':("bio")],-1)
+invokeTag('fieldValue','g',84,['bean':(tekUserInstance),'field':("bio")],-1)
 printHtmlPart(16)
 }
 printHtmlPart(17)
 if(true && (tekUserInstance?.password)) {
 printHtmlPart(26)
-invokeTag('message','g',73,['code':("tekUser.password.label"),'default':("Password")],-1)
+invokeTag('message','g',92,['code':("tekUser.password.label"),'default':("Password")],-1)
 printHtmlPart(27)
-invokeTag('fieldValue','g',75,['bean':(tekUserInstance),'field':("password")],-1)
+invokeTag('fieldValue','g',96,['bean':(tekUserInstance),'field':("password")],-1)
 printHtmlPart(16)
 }
 printHtmlPart(28)
 createTagBody(2, {->
 printHtmlPart(29)
 createTagBody(3, {->
-invokeTag('message','g',83,['code':("default.button.edit.label"),'default':("Edit")],-1)
-})
-invokeTag('link','g',83,['class':("edit"),'action':("edit"),'resource':(tekUserInstance)],3)
 printHtmlPart(30)
-invokeTag('actionSubmit','g',84,['class':("delete"),'action':("delete"),'value':(message(code: 'default.button.delete.label', default: 'Delete')),'onclick':("return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');")],-1)
+invokeTag('message','g',105,['code':("default.button.edit.label"),'default':("Edit")],-1)
 printHtmlPart(31)
 })
-invokeTag('form','g',86,['url':([resource:tekUserInstance, action:'delete']),'method':("DELETE")],2)
+invokeTag('link','g',106,['class':("edit"),'action':("edit"),'resource':(tekUserInstance)],3)
+printHtmlPart(31)
+invokeTag('actionSubmit','g',107,['class':("delete"),'action':("delete"),'value':(message(code: 'default.button.delete.label', default: 'Delete')),'onclick':("return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');")],-1)
 printHtmlPart(32)
 })
-invokeTag('captureBody','sitemesh',88,[:],1)
+invokeTag('form','g',109,['url':([resource:tekUserInstance, action:'delete']),'method':("DELETE")],2)
 printHtmlPart(33)
+})
+invokeTag('captureBody','sitemesh',111,[:],1)
+printHtmlPart(34)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1710503868327L
+public static final long LAST_MODIFIED = 1712736862739L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'
